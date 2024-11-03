@@ -1,5 +1,7 @@
 package academy.devjava.maratonajava.introducao;
 
+import java.util.Scanner;
+
 public class Aula04Operadores {
     public static void main(String[] args) {
         int numero01 = 10;
@@ -36,18 +38,49 @@ public class Aula04Operadores {
 
         // Lógicos AND, todas as condicoes precisam ser true
 
-        String senhaFesta = "Papagaio";
-        String segundaSenhaFesta = "Tatu";
-        String entradaSenha = "Papagaio";
+        String senhaFesta = "doces";
+        String senhaFesta2 = "aranha";
+        Byte tetativasEntrada = 3;
+        boolean acompanhado = false;
 
-        if(entradaSenha == senhaFesta || entradaSenha == segundaSenhaFesta){
-            System.out.println("\nSua entrada a festa foi altorizada, \nSejá bem-vindo!");
+        Scanner ler = new Scanner(System.in);
 
+
+        System.out.println("\nSeja bem vindo a festa de halloween, para entrar diga a senha secreta.\nVocê so tem três tentativas.\nCaso esteja acompanhado você e seu parceiro pode falar duas opções diferentes por entrada ");
+        System.out.println("\nVocê esta acompanhado? Se estiver digite 'Sim'");
+        String verificaAcompanhado = ler.next();
+
+        if (verificaAcompanhado.equalsIgnoreCase("Sim")){
+            acompanhado = true;
+        }
+        while(tetativasEntrada != 0){
+
+            if(acompanhado){
+                System.out.println("Digite a primeira senha: ");
+                String senhaCasal1 = ler.next();
+                System.out.println("Digite a segunda senha: ");
+                String senhaCasal2 = ler.next();
+
+                if (senhaCasal1.trim().equals(senhaFesta) || senhaCasal1.trim().equals(senhaFesta2) || senhaCasal2.trim().equals(senhaFesta) || senhaCasal2.trim().equals(senhaFesta2) ){
+                    System.out.println("\nSuas entradas para a festa foram autorizadas, \nSejam bem-vindos!");
+                    tetativasEntrada = 0;
+                } else {
+                    tetativasEntrada --;
+                    System.out.println("\nSenha incorreta, você possui: "+ tetativasEntrada+ " tentativas.");
+                }
+            } else {
+                System.out.println("Digite a senha secreta: ");
+                String senhaPessoal = ler.next();
+                if(senhaPessoal.trim().equals(senhaFesta) || senhaPessoal.trim().equals(senhaFesta2)){
+                    System.out.println("\nSua entrada a festa foi autorizada, \nSejá bem-vindo!");
+                    tetativasEntrada = 0;
+                } else {
+                    tetativasEntrada --;
+                    System.out.println("\nSenha incorreta, você possui: "+ tetativasEntrada+ " tentativas.");
+                }
+            }
         }
 
-
     }
-
-
 
 }

@@ -1,9 +1,19 @@
 package academy.devjava.maratonajava.javacore.Hheranca.dominio;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;
+    protected String cpf;
+    protected Endereco endereco;
+
+    static {
+        System.out.println("Bloco estatico Pessoa");
+    }
+    {
+        System.out.println("Bloco de inicializaão 1.");
+    }
+    {
+        System.out.println("Bloco de inicialçização 2");
+    }
 
     public void imprime(){
         System.out.println(this.nome);

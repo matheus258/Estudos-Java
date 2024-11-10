@@ -23,8 +23,11 @@ public class HerancaTest01 {
         funcionario.setNome("Monkey D. Luffy");
         funcionario.setCpf("8000000");
         funcionario.setEndereco(endereco1);
+        funcionario.setSalario(25000);
 
         pessoa.imprime();
+        System.out.println("-------------");
         funcionario.imprime();
+        funcionario.relatorioSalario();
     }
 }

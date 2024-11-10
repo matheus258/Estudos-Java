@@ -6,9 +6,17 @@ import academy.devjava.maratonajava.javacore.Minterfaces.dominio.FileLoader;
 
 public class DataLoaderTest01 {
     public static void main(String[] args) {
-        DataLoader dataLoader = new DataBaseLoader();
+        DataBaseLoader dataBaseLoader = new DataBaseLoader();
         FileLoader fileLoader = new FileLoader();
-        dataLoader.load();
+        dataBaseLoader.load();
         fileLoader.load();
+
+        dataBaseLoader.remove();
+        fileLoader.remove();
+        System.out.println("----------");
+        dataBaseLoader.checkPermission();
+
+
+
     }
 }

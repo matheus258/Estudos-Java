@@ -7,6 +7,7 @@ import academy.devjava.maratonajava.javacore.Npolimorfismo.dominio.Tomate;
 public class CalculadoraImposto {
 
     public static void calcularImposto(Produto produto){
+
         System.out.println("Relatótio de imposto");
         double imposto = produto.calcularImposto();
         System.out.println("Produto - "+produto.getNome());
@@ -15,7 +16,14 @@ public class CalculadoraImposto {
         System.out.println("Total: "+(produto.getValor()+imposto));
         if (produto instanceof Tomate){
             Tomate tomate = (Tomate) produto;
+            System.out.println("Categoria: "+tomate.getCategoriaAlimento());
             System.out.println("Validade: "+tomate.getValidade());
         }
+        if (produto instanceof  Computador){
+            Computador computador = (Computador) produto;
+            System.out.println("Categoria: "+computador.getCategoria());
+        }
+
+
     }
 }
